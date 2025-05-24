@@ -7,15 +7,18 @@ import { api } from "../convex/_generated/api";
 
 export default function Home() {
   return (
-    <>
-      <Authenticated>
-        <UserButton />
-        <Content />
-      </Authenticated>
-      <Unauthenticated>
-        <SignInButton />
-      </Unauthenticated>
-    </>
+    <div>
+      df
+    </div>
+    // <>
+    //   <Authenticated>
+    //     <UserButton />
+    //     <Content />
+    //   </Authenticated>
+    //   <Unauthenticated>
+    //     <SignInButton />
+    //   </Unauthenticated>
+    // </>
   );
 }
 
