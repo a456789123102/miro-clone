@@ -1,5 +1,6 @@
 "use client";
 import { useOrganizationList } from "@clerk/clerk-react";
+import { OrgItem } from "./OrgItem";
 
 export const OrgList = () => {
     const { userMemberships } = useOrganizationList({
@@ -9,12 +10,10 @@ export const OrgList = () => {
     });
     if (!userMemberships.data?.length) return null;
     return (
-        <ul>
+        <ul className="flex flex-col gap-3">
             {
                 userMemberships.data.map((e) => (
-                    <div key={e.organization.id}>
-                        {e.organization.name}
-                    </div>
+                    <OrgItem key={e.organization.id} id={e.organization.id} name={e.organization.name} imageUrl={e.organization.imageUrl} />
                 ))
             }
         </ul>
