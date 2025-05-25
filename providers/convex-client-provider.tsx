@@ -1,9 +1,9 @@
 'use client'
 
 import { ReactNode } from 'react'
-import { Authenticated, AuthLoading, ConvexReactClient } from 'convex/react'
+import { Authenticated, AuthLoading, ConvexReactClient, Unauthenticated } from 'convex/react'
 import { ConvexProviderWithClerk } from 'convex/react-clerk'
-import { useAuth } from '@clerk/nextjs'
+import { SignInButton, useAuth } from '@clerk/nextjs'
 import { Loading } from '@/components/auth/loading'
 
 if (!process.env.NEXT_PUBLIC_CONVEX_URL) {
@@ -18,6 +18,9 @@ export default function ConvexClientProvider({ children }: { children: ReactNode
       <Authenticated>
         {children}
       </Authenticated>
+       <Unauthenticated>
+        <SignInButton />
+      </Unauthenticated>
       <AuthLoading>
         <Loading />
       </AuthLoading>
